@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.cx</groupId>
+  <artifactId>mycollege</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>mycollege Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring.version>3.2.12.RELEASE</spring.version>
+    <mybatis.version>3.2.7</mybatis.version>
+    <aspectj.version>1.7.3</aspectj.version>
+    <jdk.version>1.8</jdk.version>
+  </properties>
+  <dependencies>
+
+
+    <!-- GENERAL UTILS end -->
+    <!--sitemesh3.0-->
+    <dependency>
+      <groupId>org.sitemesh</groupId>
+      <artifactId>sitemesh</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+
+
+    <!--get set 插件-->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.16.2</version>
+    </dependency>
+
+    <!-- Gson -->
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.2.4</version>
+    </dependency>
+
+
+
+    <!--ue编辑器-->
+    <!--<dependency>-->
+      <!--<groupId>com.baidu.ueditor</groupId>-->
+      <!--<artifactId>ueditor</artifactId>-->
+      <!--<version>1.1.2</version>-->
+      <!--<scope>system</scope>-->
+      <!--<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ueditor-1.1.2.jar</systemPath>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>org.json</groupId>-->
+      <!--<artifactId>json.jar</artifactId>-->
+      <!--<version>1.0</version>-->
+      <!--<scope>system</scope>-->
+      <!--<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/json.jar</systemPath>-->
+    <!--</dependency>-->
+    <!--ue编辑器-->
+  </dependencies>
+
+  <build>
+    <finalName>mycollege</finalName>
+    <plugins>
+      <!-- tomcat plugin -->
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <path>/</path>
+          <port>8088</port>
+          <uriEncoding>UTF-8</uriEncoding>
+          <url>http://127.0.0.1/manager</url>
+          <server>tomcat7</server>
+          <contextReloadable>true</contextReloadable>
+          <warSourceDirectory>src/main/webapp</warSourceDirectory>
+          <contextReloadable>false</contextReloadable>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

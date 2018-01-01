@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="mycollege:war exploded">
+    <output-path>$PROJECT_DIR$/target/mycollege</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="mycollege" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.sitemesh:sitemesh:3.0.1" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.16.2" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.2.4" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/mycollege/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="mycollege/web/Web" />
+    </root>
+  </artifact>
+</component>
