@@ -10,55 +10,93 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spring.version>3.2.12.RELEASE</spring.version>
+    <!--spring-->
+    <spring.version>4.1.5.RELEASE</spring.version>
     <mybatis.version>3.2.7</mybatis.version>
     <aspectj.version>1.7.3</aspectj.version>
     <jdk.version>1.8</jdk.version>
+    <!--web-->
+    <jsp.version>2.2</jsp.version>
+    <jstl.version>1.2</jstl.version>
+    <servlet.version>3.1.0</servlet.version>
+    <!--logging-->
+      <logback.version>1.0.13</logback.version>
+      <slf4j.version>1.7.5</slf4j.version>
   </properties>
   <dependencies>
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-web-api</artifactId>
+      <version>7.0</version>
+      <scope>provided</scope>
+    </dependency>
 
-
-    <!-- GENERAL UTILS end -->
-    <!--sitemesh3.0-->
+    <!--springmvc-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <!--其他web依赖-->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>${jstl.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>${servlet.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet.jsp</groupId>
+      <artifactId>jsp-api</artifactId>
+      <version>${jsp.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
     <dependency>
       <groupId>org.sitemesh</groupId>
       <artifactId>sitemesh</artifactId>
       <version>3.0.1</version>
     </dependency>
 
-
-    <!--get set 插件-->
+    <!--日志框架 slf4j logback-->
     <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.16.2</version>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
     </dependency>
-
-    <!-- Gson -->
     <dependency>
-      <groupId>com.google.code.gson</groupId>
-      <artifactId>gson</artifactId>
-      <version>2.2.4</version>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.16</version>
     </dependency>
-
-
-
-    <!--ue编辑器-->
-    <!--<dependency>-->
-      <!--<groupId>com.baidu.ueditor</groupId>-->
-      <!--<artifactId>ueditor</artifactId>-->
-      <!--<version>1.1.2</version>-->
-      <!--<scope>system</scope>-->
-      <!--<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ueditor-1.1.2.jar</systemPath>-->
-    <!--</dependency>-->
-    <!--<dependency>-->
-      <!--<groupId>org.json</groupId>-->
-      <!--<artifactId>json.jar</artifactId>-->
-      <!--<version>1.0</version>-->
-      <!--<scope>system</scope>-->
-      <!--<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/json.jar</systemPath>-->
-    <!--</dependency>-->
-    <!--ue编辑器-->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-access</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -71,7 +109,7 @@
         <version>2.2</version>
         <configuration>
           <path>/</path>
-          <port>8088</port>
+          <port>8080</port>
           <uriEncoding>UTF-8</uriEncoding>
           <url>http://127.0.0.1/manager</url>
           <server>tomcat7</server>
