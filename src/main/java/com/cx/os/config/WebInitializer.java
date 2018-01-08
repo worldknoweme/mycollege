@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
 public class WebInitializer implements WebApplicationInitializer{
+
     public void onStartup(ServletContext servletContext) throws ServletException {
 
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
@@ -18,8 +19,10 @@ public class WebInitializer implements WebApplicationInitializer{
         ServletRegistration.Dynamic servlet = servletContext.addServlet("dispatcher",new DispatcherServlet(ctx));
         //拦截所有请求
         servlet.addMapping("/");
+
         servlet.setLoadOnStartup(1);
     }
+
 
 
 }

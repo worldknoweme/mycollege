@@ -65,7 +65,17 @@
       <artifactId>sitemesh</artifactId>
       <version>3.0.1</version>
     </dependency>
-
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.5.3</version>
+    </dependency>
+    <!--get set 插件-->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.16.2</version>
+    </dependency>
     <!--日志框架 slf4j logback-->
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -113,10 +123,25 @@
           <uriEncoding>UTF-8</uriEncoding>
           <url>http://127.0.0.1/manager</url>
           <server>tomcat7</server>
-          <contextReloadable>true</contextReloadable>
-          <warSourceDirectory>src/main/webapp</warSourceDirectory>
-          <contextReloadable>false</contextReloadable>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+            <encoding>UTF8</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.3</version>
+          <configuration>
+            <failOnMissingWebXml>false</failOnMissingWebXml>
+          </configuration>
       </plugin>
     </plugins>
   </build>
