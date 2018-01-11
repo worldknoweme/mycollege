@@ -8,10 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>
-        <sitemesh:write property="title"></sitemesh:write>
-    </title>
-    <script src="/statics/js/jquery.js"></script>
+    <sitemesh:write property="head"></sitemesh:write>
 </head>
 <body>
 <sitemesh:write property='body' />

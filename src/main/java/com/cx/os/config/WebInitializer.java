@@ -10,6 +10,11 @@ import javax.servlet.ServletRegistration;
 
 public class WebInitializer implements WebApplicationInitializer{
 
+    /**
+     *
+     * @param servletContext
+     * @throws ServletException
+     */
     public void onStartup(ServletContext servletContext) throws ServletException {
 
         AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
